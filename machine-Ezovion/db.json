@@ -1,0 +1,98 @@
+{
+  "productDetails": [
+    {
+      "id": "1",
+      "product": "post",
+      "category": "household",
+      "fullPrice": 22.22,
+      "SalePrice": 22.22,
+      "avaibility": "true",
+      "supplier": "3m",
+      "discount": "2%2",
+      "IsaddProduct": false,
+      "isEdit": false
+    },
+    {
+      "id": "3",
+      "product": "post",
+      "category": "household",
+      "fullPrice": 40,
+      "SalePrice": 0.5,
+      "avaibility": "false",
+      "supplier": "3m",
+      "discount": "40",
+      "IsaddProduct": false,
+      "isEdit": false
+    },
+    {
+      "id": "5",
+      "product": "product",
+      "category": "house",
+      "fullPrice": 55.55,
+      "SalePrice": 55.55,
+      "avaibility": "false",
+      "supplier": "3m",
+      "discount": "900",
+      "IsaddProduct": false,
+      "isEdit": false
+    },
+    {
+      "id": "2",
+      "product": "product",
+      "category": "household",
+      "fullPrice": 50,
+      "SalePrice": 50,
+      "avaibility": "false",
+      "supplier": "3m",
+      "discount": "500",
+      "IsaddProduct": false,
+      "isEdit": false
+    },
+    {
+      "id": "6",
+      "product": "post",
+      "category": "retail",
+      "fullPrice": 5,
+      "SalePrice": 50,
+      "avaibility": "false",
+      "supplier": "3m",
+      "discount": "500",
+      "IsaddProduct": false,
+      "isEdit": false
+    },
+    {
+      "id": "10",
+      "product": "post",
+      "category": "retail",
+      "fullPrice": 5,
+      "SalePrice": 5,
+      "avaibility": "false",
+      "supplier": "3m",
+      "discount": "50",
+      "IsaddProduct": false,
+      "isEdit": false
+    },
+    {
+      "id": "50",
+      "product": "product",
+      "category": "retail",
+      "fullPrice": 40,
+      "SalePrice": 0.5,
+      "avaibility": "false",
+      "supplier": "3m",
+      "discount": "5%0",
+      "IsaddProduct": false,
+      "isEdit": false
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

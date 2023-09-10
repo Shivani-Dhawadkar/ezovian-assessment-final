@@ -1,0 +1,239 @@
+<form [formGroup]="newForm" (ngSubmit)="onSubmitForm(newForm)">
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-10  col-sm-12 offset-md-1">
+                <h2>Product-Details</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10  col-sm-12  offset-md-1 mb-2">
+                <button mat-raised-button color="primary" (click)="onAddProduct()">Add product</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-sm-12 offset-md-1">
+
+                <!-- -----------Table -------------------- -->
+
+                <table class="table table-striped" [ngClass]="{'table-responsive' : newForm.value.isEdit}">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id
+                                <i class="fa-solid fa-chevron-down fa-2xs" (click)="onArrowSort()"></i>
+                            </th>
+                            <th scope="col">Product
+                                <i class="fa-solid fa-chevron-down fa-2xs" (click)="onArrowClick()"></i>
+                            </th>
+                            <th scope="col">Category
+                                <i class="fa-solid fa-chevron-down fa-2xs" (click)="onArrowClick()"></i>
+                            </th>
+                            <th scope="col">FullPrice
+                                <i class="fa-solid fa-chevron-down fa-2xs" (click)="onArrowClick()"></i>
+                            </th>
+                            <th scope="col">Saleprice
+                                <i class="fa-solid fa-chevron-down fa-2xs" (click)="onArrowClick()"></i>
+                            </th>
+                            <th scope="col">Avaibility
+                                <i class="fa-solid fa-chevron-down fa-2xs" (click)="onArrowClick()"></i>
+                            </th>
+                            <th scope="col">Supplier
+                                <i class="fa-solid fa-chevron-down fa-2xs" (click)="onArrowClick()"></i>
+                            </th>
+                            <th scope="col">Discount
+                                <i class="fa-solid fa-chevron-down fa-2xs" (click)="onArrowClick()"></i>
+                            </th>
+                            <th scope="col">Edit</th>
+                        </tr>
+                    </thead>
+
+                    <!-------------Table-body------------- -->
+
+                    <tbody>
+                        <tr *ngFor="let item of detailsArr, let i= index" class="my-tr">
+                            
+                            <th scope="row">
+                    <!-------------id------------- -->
+                                <div *ngIf="item.isEdit || item.IsaddProduct">
+                                    <mat-form-field class="my-field">
+                                        <input matInput type="text" formControlName="id" [(ngModel)]="item.id">
+                                        <div
+                                            *ngIf="newForm.get('id')?.hasError('required') && newForm.get('id')?.touched">
+                                            <p class="alert alert-danger">
+                                                please add required information
+                                            </p>
+                                        </div>
+                                        <div
+                                            *ngIf="newForm.get('id')?.hasError('pattern') && newForm.get('id')?.dirty">
+                                            <p class="alert alert-danger">only numbers are valid</p>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div *ngIf="!item.isEdit">
+                                    {{item.id}}
+                                </div>
+                                <div *ngIf="item.id==0">
+                                    {{i+1}}
+                                </div>
+                            </th>
+                    <!-------------product------------- -->
+                            <td>
+                                <div *ngIf="item.isEdit || item.IsaddProduct">
+                                    <mat-form-field  class="my-field">
+                                        <input matInput type="text" formControlName="product"
+                                            [(ngModel)]="item.product">
+                                        <div
+                                            *ngIf="newForm.get('product')?.hasError('required') && newForm.get('product')?.touched">
+                                            <p class="alert alert-danger">please add required information</p>
+                                        </div>
+                                        <div
+                                            *ngIf="newForm.get('product')?.hasError('pattern') && newForm.get('product')?.dirty">
+                                            <p class="alert alert-danger">only text and space is valid</p>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div *ngIf="!item.isEdit">
+                                    {{item.product}}
+                                </div>
+                            </td>
+                    <!-------------category------------- -->
+                            <td>
+                                <div *ngIf="item.isEdit || item.IsaddProduct">
+                                    <mat-form-field  class="my-field">
+                                        <input matInput type="text" formControlName="category"
+                                            [(ngModel)]="item.category">
+                                        <div
+                                            *ngIf="newForm.get('category')?.hasError('required') && newForm.get('category')?.touched">
+                                            <p class="alert alert-danger">please add required information</p>
+                                        </div>
+                                        <div
+                                            *ngIf="newForm.get('category')?.hasError('pattern') && newForm.get('category')?.dirty">
+                                            <p class="alert alert-danger">only text and space is valid</p>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div *ngIf="!item.isEdit">
+                                    {{item.category}}
+                                </div>
+                            </td>
+                    <!-------------fullPrice------------- -->
+                            <td>
+                                <div *ngIf="item.isEdit || item.IsaddProduct">
+                                    <mat-form-field  class="my-field">
+                                        <input matInput appDecimalFormat type="number" [(ngModel)]="item.fullPrice"
+                                            formControlName="fullPrice">
+                                        <div
+                                            *ngIf="newForm.get('fullPrice')?.hasError('required') && newForm.get('fullPrice')?.touched">
+                                            <p class="alert alert-danger">please add required information</p>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div *ngIf="!item.isEdit">
+                                    {{item.fullPrice}}
+                                </div>
+                            </td>
+                    <!-------------salePrice------------- -->
+                            <td>
+                                <div *ngIf="item.isEdit || item.IsaddProduct">
+                                    <mat-form-field  class="my-field">
+                                        <input matInput type="number" appDecimalFormat [(ngModel)]="item.SalePrice"
+                                            formControlName="SalePrice">
+                                        <div
+                                            *ngIf="newForm.get('SalePrice')?.hasError('required') && newForm.get('SalePrice')?.touched">
+                                            <p class="alert alert-danger">please add required information</p>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div *ngIf="!item.isEdit">
+                                    {{item.SalePrice}}
+                                </div>
+                            </td>
+                    <!-------------avaibility------------- -->
+                            <td>
+                                <div *ngIf="item.isEdit || item.IsaddProduct">
+                                    <mat-form-field  class="my-field">
+                                        <!-- <input matInput type="text" [(ngModel)]="item.avaibility" formControlName="avaibility"> -->
+                                        <mat-select [(ngModel)]="item.avaibility" formControlName="avaibility">
+                                            <mat-option value="true">True</mat-option>
+                                            <mat-option value="false">False</mat-option>
+                                            <div
+                                                *ngIf="newForm.get('avaibility')?.hasError('avaibility') && newForm.get('SalePrice')?.touched">
+                                                <p class="alert alert-danger">please add required information</p>
+                                            </div>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div *ngIf="!item.isEdit">
+                                    {{item.avaibility}}
+                                </div>
+                            </td>
+                    <!-------------supplier------------- -->
+                            <td>
+                                <div *ngIf="item.isEdit || item.IsaddProduct">
+                                    <mat-form-field  class="my-field">
+                                        <input matInput type="text" formControlName="supplier"
+                                            [(ngModel)]="item.supplier">
+                                        <div
+                                            *ngIf="newForm.get('supplier')?.hasError('required') && newForm.get('supplier')?.touched">
+                                            <p class="alert alert-danger">please add required information</p>
+                                        </div>
+                                        <div
+                                            *ngIf="newForm.get('supplier')?.hasError('pattern') && newForm.get('supplier')?.dirty">
+                                            <p class="alert alert-danger">only text and space is valid</p>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div *ngIf="!item.isEdit">
+                                    {{item.supplier}}
+                                </div>
+                            </td>
+                    <!-------------discount------------- -->
+                            <td>
+                                <div *ngIf="item.isEdit || item.IsaddProduct">
+                                    <mat-form-field  class="my-field">
+                                        <input matInput type="text" formControlName="discount" appPercentFormat="false"
+                                            [(ngModel)]="item.discount">
+                                        <div
+                                            *ngIf="newForm.get('discount')?.hasError('required') && newForm.get('discount')?.touched">
+                                            <p class="alert alert-danger">please add required information</p>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div *ngIf="!item.isEdit">
+                                    {{item.discount}}
+                                </div>
+                            </td>
+                    <!-------------buttons------------- -->
+                            <td>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div *ngIf="!item.isEdit && !item.IsaddProduct">
+                                            <i class="fa-regular fa-pen-to-square" mat-button
+                                                (click)="OnEdit(item)"></i>
+                                            <!-- <button mat-button (click)="OnEdit(item)">edit</button> -->
+                                        </div>
+                                        <div *ngIf="item.IsaddProduct && !item.isEdit">
+                                            <!-- <button mat-button (click)="OnAdd(item)">Add</button> -->
+                                        </div>
+                                        <div *ngIf="item.isEdit">
+                                            <!-- <button mat-button (click)="OnUpdate(item)">update</button> -->
+                                            <i class="fa-regular fa-floppy-disk" (click)="OnUpdate(item, item.id)"></i>
+                                            <!-- <button mat-button (click)="onDelete(item)">delete</button> -->
+
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <i class="fa-regular fa-trash-can" (click)="onDelete(item)"></i>
+                                    </div>
+                                </div>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</form>

@@ -1,0 +1,62 @@
+{
+  "productDetails": [
+    {
+      "id": "1",
+      "product": "post it",
+      "category": "household",
+      "fullPrice": 50.55,
+      "SalePrice": 55.55,
+      "avaibility": "true",
+      "supplier": "3m",
+      "discount": "50%",
+      "IsaddProduct": false,
+      "isEdit": false
+    },
+    {
+      "id": "2",
+      "product": "chips",
+      "category": "household",
+      "fullPrice": 20.55,
+      "SalePrice": 19.75,
+      "avaibility": "false",
+      "supplier": "3m",
+      "discount": "20%",
+      "IsaddProduct": false,
+      "isEdit": false
+    },
+    {
+      "id": "3",
+      "product": "beauty",
+      "category": "retail",
+      "fullPrice": 70.55,
+      "SalePrice": 35.88,
+      "avaibility": "true",
+      "supplier": "3m",
+      "discount": "70%",
+      "IsaddProduct": false,
+      "isEdit": false
+    },
+    {
+      "id": "4",
+      "product": "milk",
+      "category": "household",
+      "fullPrice": 50.22,
+      "SalePrice": 50.11,
+      "avaibility": "false",
+      "supplier": "3m",
+      "discount": "70%",
+      "IsaddProduct": false,
+      "isEdit": false
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

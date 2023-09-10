@@ -1,0 +1,38 @@
+// .my-tr{
+//     Input{
+//         overflow: hidden;   
+//         width: 100% !important;
+//     }
+// }
+// .mat-form-field-infix {
+//     display: block;
+//     position: relative;
+//     flex: auto;
+//     min-width: 0;
+//     width: 100% !important;
+// }
+
+// .my-form-field{
+//     width: 100%;
+// }
+
+.my-form-field {
+    width: 100%;
+}
+
+.fa-regular {
+    flex-direction: row;
+    cursor: pointer;
+    color: white;
+    background-color: gray;
+    padding: 2px;
+}
+
+.fa-trash-can {
+    background-color: red;
+
+}
+
+.fa-chevron-down{
+    cursor: pointer;
+}
